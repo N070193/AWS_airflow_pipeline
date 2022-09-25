@@ -1,0 +1,12 @@
+spark submit through livy:
+curl -X POST --data '{"file": "s3://nitesh-landingzone/code/spark_emr_cluster.py","args":["Actives","Viewership"],"className": "org.apache.spark.examples.SparkPi"}' -H "Content-Type: application/json" http://ec2-13-251-105-249.ap-southeast-1.compute.amazonaws.com:8998/batches
+=====================================================================================================================================================================================================================================================================================
+
+spark submit through livy(python):
+
+import json, pprint, requests, textwrap
+host = "http://ec2-3-0-201-46.ap-southeast-1.compute.amazonaws.com:8998"
+data = {'file': 's3://nitesh-landingzone/code/spark_emr_cluster.py','args':["Actives","Viewership"], 'className': "org.apache.spark.examples.SparkPi"}
+headers = {'Content-Type': 'application/json'}
+r = requests.post(host + '/batches', data=json.dumps(data), headers=headers)
+r.json()
