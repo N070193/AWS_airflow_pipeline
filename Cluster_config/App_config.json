@@ -1,0 +1,26 @@
+{
+
+	"actives_data": {
+			"source": "s3://nitesh-landingzone/datasets/Actives/*.parquet",
+			"raw_destination": "s3://nitesh-rawzone/datasets/Actives",
+			"raw_source":"s3://nitesh-rawzone/datasets/Actives/*.parquet",
+			"final_destination": "s3://nitesh-stagingzone/datasets/Actives",
+			"masking_columns": ["advertising_id", "user_id"],
+			"transform1_columns": ["user_latitude","user_longitude"],
+			"transform2_columns":["location_source"],
+			"partition_columns": ["month","date"]
+
+			},
+	
+	"viewership_data": {
+			"source": "s3://nitesh-landingzone/datasets/Viewership/*.parquet",
+			"raw_destination": "s3://nitesh-rawzone/datasets/Viewership",
+			"raw_source":"s3://nitesh-rawzone/datasets/Viewership/*.parquet",
+			"final_destination": "s3://nitesh-stagingzone/datasets/Viewership",
+			"masking_columns": ["advertising_id"],
+			"transform1_columns": ["user_lat","user_long"],
+			"transform2_columns":["location_source"],
+			"partition_columns": ["month","date"]
+
+			}
+}

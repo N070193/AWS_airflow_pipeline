@@ -1,0 +1,20 @@
+[
+  {
+    "Classification": "spark-defaults",
+    "Properties": {
+      "spark.path":"s3://nitesh-landingzone/configuration/App_config.json",
+      "spark.master":"yarn",
+      "spark.submit.deployMode":"cluster",
+      "spark.driver.memory":"4g",
+      "spark.executor.memory":"2g",
+      "spark.driver.cores":"1",
+      "spark.executor.cores":"2",
+	  "maximizeResourceAllocation": "true",
+      "spark.dynamicAllocation.enabled" : "true",
+      "spark.dynamicAllocation.minExecutors":"10",                                                                                                                                                                                                                                                                                                                                            
+      "spark.hadoop.fs.s3a.block.size":"512M",
+      "spark.python.worker.memory":"512M"
+    }
+  }
+]
+
